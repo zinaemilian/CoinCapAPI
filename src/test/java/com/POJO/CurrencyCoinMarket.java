@@ -2,7 +2,7 @@ package com.POJO;
 
 import java.util.Map;
 
-public class Currency {
+public class CurrencyCoinMarket {
     private Status status;
     private Data data;
 
