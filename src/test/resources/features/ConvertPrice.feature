@@ -3,13 +3,13 @@ Feature: Price Conversion
 
   Scenario Outline: Convert successfully any currency to target currency
     Given i try to convert "<amount>" "<coinMarketId>" to "<currencyCode>"
+    When  i try to convert the amount received in GBP "2791" to "DOGE"
     Then i should see the status code 200
+    And i should see the quote price value is increased
     Examples:
-      |amount   |coinMarketId|currencyCode     |
-      | 10000000|3541         |GBP             |
+      | amount   | coinMarketId | currencyCode |
+      | 10000000 | 3541         | GBP          |
 
-    Scenario: Convert successfully Guatemalan Quetzal currency to GBP than Dogecoin cryptocurrency
-      Given i try to convert "10000000" Guatemalan Quetzal currency "3541" to British pounds "GBP"
-      When  i try to convert the amount received in GBP "2791" to "DOGE"
-      Then i should see the status code 200
+
+
 
