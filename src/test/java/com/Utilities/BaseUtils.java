@@ -5,7 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.JSONObject;
-import org.testng.asserts.SoftAssert;
+
 
 import static org.hamcrest.Matchers.equalTo;
 
@@ -69,15 +69,15 @@ public class BaseUtils {
         return response;
     }
 
-    public static void assertEquals(Object objExpected, Object objActual) {
-        try {
-            SoftAssert sAssert = new SoftAssert();
-            sAssert.assertEquals(objActual.toString().trim(), objExpected.toString().trim());
-            sAssert.assertAll();
-        } catch (Exception | AssertionError var3) {
-            throw var3;
-        }
-    }
+//    public static void assertEquals(Object objExpected, Object objActual) {
+//        try {
+//            SoftAssert sAssert = new SoftAssert();
+//            sAssert.assertEquals(objActual.toString().trim(), objExpected.toString().trim());
+//            sAssert.assertAll();
+//        } catch (Exception | AssertionError var3) {
+//            throw var3;
+//        }
+//    }
 
     public static void verifyMessage(Response response, String errorMessage) {
         response.then().assertThat().body("message", equalTo(errorMessage));
